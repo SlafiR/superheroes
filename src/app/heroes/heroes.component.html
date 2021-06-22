@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="search_bar">
+        <input type="text" class="input" placeholder="Buscar personaje...">
+    </div>
+    <div class="cards-container">
+        <div class="card" *ngFor="let heroe of heroes | slice:0:20">
+            <img [src]="heroe.images.md" alt="">
+            <div class="text">
+                <h4>{{heroe.name}}</h4>
+                <p>Inteligence: 100</p>
+                <p>Speed: 100</p>
+                <p>Power: 100</p>
+                <p>Gender: Male</p>
+                <p>Race: Alien</p>
+            </div>
+        </div>
+    </div>
+</div>
