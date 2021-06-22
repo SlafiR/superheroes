@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-heroes',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor() { }
+  public heroes:any
+  constructor(private http:HttpClient) {
 
-  ngOnInit(): void {
+   }
+
+  ngOnInit(): void { 
+    this.http.get("https://akabab.github.io/superhero-api/api/all.json")
+    .subscribe( _heroes => {
+      console.log(_heroes)
+      this.heroes = _heroes
+    })
   }
 
 }

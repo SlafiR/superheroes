@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 /* import { BrowserModule } from '@angular/platform-browser'; */
 import { HeroesComponent } from './heroes.component';
 import { HeroesRoutingModule } from './heroes.routing.module';
+import { HttpClientModule } from '@angular/common/http'
 
 
 // aksdjhfasjkdhfkajshdfasdf ctrl + k+c ///// shift+alt+a
@@ -13,7 +14,8 @@ import { HeroesRoutingModule } from './heroes.routing.module';
   ],
   imports: [
     CommonModule,
-    HeroesRoutingModule
+    HeroesRoutingModule,
+    HttpClientModule
   ],
   exports: [ HeroesComponent ]
 })
