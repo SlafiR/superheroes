@@ -3,9 +3,10 @@
         <input type="text" class="input" placeholder="Buscar personaje...">
     </div>
     <div class="cards-container">
-        <div class="card" *ngFor="let heroe of heroes | slice:0:9">
-            <img [src]="heroe.images.md" alt="">
-            <div class="text">
+        <div class="card" *ngFor="let heroe of heroes | slice:0:20">
+            <mat-spinner color="primary" *ngIf="heroesLoad"></mat-spinner>
+            <img [src]="heroe.images.md" alt="" *ngIf="!heroesLoad"  [routerLink]="['/',heroe.id]">
+            <div class="text" *ngIf="!heroesLoad">
                 <h4>{{heroe.name}}</h4>
                 <p>Inteligence: {{heroe.powerstats.intelligence}}</p>
                 <p>Speed: {{heroe.powerstats.speed}}</p>

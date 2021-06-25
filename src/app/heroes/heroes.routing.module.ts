@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: HeroesComponent
-  },
+  },/* 
+  {
+    path: ':heroid',
+    loadChildren: () => import("src/app/hero/hero.module").then(m=>m.HeroModule)
+  } */
 ];
 
 @NgModule({

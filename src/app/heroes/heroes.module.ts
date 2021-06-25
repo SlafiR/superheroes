@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 /* import { BrowserModule } from '@angular/platform-browser'; */
 import { HeroesComponent } from './heroes.component';
 import { HeroesRoutingModule } from './heroes.routing.module';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 // aksdjhfasjkdhfkajshdfasdf ctrl + k+c ///// shift+alt+a
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http'
   imports: [
     CommonModule,
     HeroesRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   exports: [ HeroesComponent ]
 })

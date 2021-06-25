@@ -12,14 +12,18 @@ export class HeroesComponent implements OnInit {
 
   public heroes: any[] = []
 
+  public heroesLoad: boolean= true
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.http.get(`${URL_HEROES}/all.json`)
       .subscribe((_heroes: any) => {
-        console.log(_heroes)
-        this.heroes = _heroes
+        this.heroes = this.random(_heroes)
+        this.heroesLoad = false
       })
   }
-
+  random(_heroes: any[]) : any[]{
+    return _heroes.sort(() => Math.random() -0.5) 
+  }
 }
